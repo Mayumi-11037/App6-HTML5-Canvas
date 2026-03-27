@@ -55,12 +55,12 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	function drawName() { // Function to display name
 		ctx.font = "20px Arial"; // Setting font style and size
 		ctx.fillStyle = "black"; // Set text color
-		ctx.fillText("Your Name Here", 50, 200); // Draw text (text, x position, y position
+		ctx.fillText("Mayumi Lopez", 50, 200); // Draw text (text, x position, y position)
 	}
 
 	function drawImageOnCanvas() { // Function to draw an image
 		var img = new Image(); // Create a new image object
-		img.src = "https://via.placeholder.com/150"; // Set image source (URL or local file)
+		img.src = "https://fastly.picsum.photos/id/654/200/200.jpg?hmac=oeNFLFRnWkWWnkuzoPKkwuIXUfPbCtvjpOq09MC1DrM"; // Set image source (URL or local file)
 		img.onload = function() { // When image loads, draw it on canvas
 			ctx.drawImage(img, 50, 220, 150, 150);
 		};
