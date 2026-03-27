@@ -58,46 +58,68 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 		ctx.fillText("Your Name Here", 50, 200); // Draw text (text, x position, y position
 	}
 
-	function draw
-		
+	function drawImageOnCanvas() { // Function to draw an image
+		var img = new Image(); // Create a new image object
+		img.src = "https://via.placeholder.com/150"; // Set image source (URL or local file)
+		img.onload = function() { // When image loads, draw it on canvas
+			ctx.drawImage(img, 50, 220, 150, 150);
+		};
+	}
 
-		
+	function clearCanvas() { // Function to clear the canvas
+		ctx.clearRect(0, 0, canvas.width, canvas.height); // Clears entire canvas (x, y, width, height)
+	}			
 </script>
 
 
 
-<style>	
+<style>	/* Removes default margin from page */
 .body {
      margin: 0em;
 }
-.page {
-    width: 100vw;
-    height: 100vh;
-    position: fixed;
+.page { /* Style for page layout */
+    width: 100vw; /* Full width of screen */
+    height: 100vh; /* Full height of screen */
+    position: fixed; /* Fixed positioning */
     top: 0;
-    left: -100vw;
-    overflow-y: auto;
+    left: -100vw; /* Hidden off screen initially */
+    overflow-y: auto; /* Scroll if needed */
     z-index: 0;
     background-color: hsl(0,0%,100%);
 }
-  .page:target {
+  .page:target { /* When page is targeted, show it */
     left: 0vw;
     z-index: 1;
 }
+	#myCanvas { /* Style for canvas border */
+		border: 2px solid black; /* Black border around canvas */
+}
 </style>
 
-<body>
-<div id="header" class="w3-container w3-flat-carrot">
+<body onload="initCanvas()"> <!-- Run initCanvas when page loads -->
+	
+<div id="header" class="w3-container w3-flat-carrot"> <!-- Header section -->
 	<h1>App6---HTML5-Canvas</h1>
 </div>
 	
-<div id="content" class="w3-container">
-	<p>Content goes here.</p>
+<div id="content" class="w3-container"> <!-- Main content -->
+	<canvas id="myCanvas" width="300" height="400"></canvas> <!-- Canvas element where drawing happens + width/height define drawing area -->
+
+	<br><br>
+
+	<button onclick="drawRectangle()">Draw Rectangle</button> <!-- Button to draw rectangle -->
+
+	<button onclick="drawName()">Show Name</button> <!-- Button to display name -->
+
+	<button onclick="drawImageOnCanvas()">Show Image</button> <!-- Button to draw image -->
+
+	<button onclick="clearCanvas()">Clear Canvas</button> <!-- Button to clear canvas -->
 		
 	<p>The following code has been developed by students and/or researchers of the Freshman Research Initiative DIY Diagnostics Stream at The University of Texas at 		Austin.  This code is shared for demonstration purposes and should not be considered a product -- it is for entertainment purposes only. Any user of this code 			does so at their own risk. Members of the DIY Stream, FRI, and The University of Texas system are not liable for anything related to this code.</p>
  	
 	<p>THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.</p>
-
+</div>
+	
 <footer class="w3-bottom w3-container w3-flat-carrot">
 	<p>DIY!</p>
 </footer>
