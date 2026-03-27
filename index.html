@@ -7,7 +7,7 @@ THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.
  
 Authors in chronological order of contribution:
 Tim Riedel
-Author 2
+Mayumi Lopez
  
 Further Information:
 http://cns.utexas.edu/fri
@@ -17,27 +17,51 @@ Timothy Riedel
 triedel@utexas.edu
  
 Brief Description of Goal of Code:
-blah, blah, blah,
+To display an image onto a Canvas using the HTML 5 coding language
  
 Known Issues:
-blah, blah, blah, blah
+Putting in required elements, buttons, visuals, etc.
 https://www.w3schools.com/w3css/default.asp
 https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-file
 -->
 	
    <head> 
-      <title>App6---HTML5-Canvas</title>  
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <meta name="apple-mobile-web-app-capable" content="yes">
-      <link rel="stylesheet" href="w3.css">
+      <title>App6---HTML5-Canvas</title> <!-- Title shown in browser tab --> 
+      <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- Makes app responsive on phones -->
+      <meta name="apple-mobile-web-app-capable" content="yes"> <!-- Allows app-like behavior -->
+      <link rel="stylesheet" href="w3.css"> <!-- These are CSS stylesheets -->
       <link rel="stylesheet" href="w3-colors-flat.css">
    </head> 
 
 
 <script>
-var docMod = document.lastModified; // loads last modified time stamp into docMod variable
-alert("This file last modified " + docMod); // generates alert box with time stamp. If annoying, comment out this entire line.
-console.log("This file last modified " + docMod); // generates message in javaScript console (found in developers tools) with time stamp. 
+	var docMod = document.lastModified; // loads last modified time stamp into docMod variable
+	alert("This file last modified " + docMod); // generates alert box with time stamp. If annoying, comment out this entire line.
+	console.log("This file last modified " + docMod); // generates message in javaScript console (found in developers tools) with time stamp. 
+
+	var canvas; // Variable that will store the canvas object
+	var ctx; // Variable that will store the drawing context
+
+	function initCanvas() { // Function runs when page loads
+		canvas = document.getElementById("myCanvas"); // Get the canvas element from HTML with the ID
+		ctx = canvas.getContext("2d"); // Get the 2D drawing context from the canvas
+	}
+
+	function drawRectangle() { // Function to draw a rectangle
+		ctx.fillStyle = "blue"; // Set fill color for rectangle
+		ctx.fillRect(50, 50, 150, 100); // Draw rectangle (x, y, width, height)
+	}
+
+	function drawName() { // Function to display name
+		ctx.font = "20px Arial"; // Setting font style and size
+		ctx.fillStyle = "black"; // Set text color
+		ctx.fillText("Your Name Here", 50, 200); // Draw text (text, x position, y position
+	}
+
+	function draw
+		
+
+		
 </script>
 
 
